@@ -3,7 +3,7 @@ package student.hackthon.team15.entity;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.Id;
-import java.util.Date;
+
 @Document(collection="expenses")
 public class ExpensesEntity {
     @Id
@@ -11,8 +11,8 @@ public class ExpensesEntity {
     private int categoryName;
     private double value;
     private String date;
-    private Boolean isBill;
-    private Boolean isPaid;
+    private Boolean billType;
+    private Boolean billPaid;
 
     public int getId() {
         return id;
@@ -46,19 +46,19 @@ public class ExpensesEntity {
         this.date = date;
     }
 
-    public Boolean getBill() {
-        return isBill;
+    public Boolean getBillType() {
+        return billType;
     }
 
-    public void setBill(Boolean bill) {
-        isBill = bill;
+    public void setBillType(Boolean billType) {
+        this.billType = billType;
     }
 
-    public Boolean getPaid() {
-        return isPaid;
+    public Boolean getBillPaid() {
+        return billPaid;
     }
 
-    public void setPaid(Boolean paid) {
-        isPaid = paid;
+    public void setBillPaid(Boolean billPaid) {
+        this.billPaid = billPaid;
     }
 }
